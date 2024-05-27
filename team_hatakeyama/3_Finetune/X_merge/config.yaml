@@ -1,0 +1,12 @@
+base_model: hatakeyama-llm-team/2_0524with_halcination_little_codes_epoch3
+#gate_mode: cheap_embed
+#gate_mode: hidden 
+gate_mode: random
+dtype: bfloat16 
+experts:
+  - source_model: hatakeyama-llm-team/2_0524with_halcination_little_codes_epoch3
+    positive_prompts:
+      - 指示
+  - source_model: hatakeyama-llm-team/clean_halcination_little_codes_epoch3
+    positive_prompts:
+      - 指示
