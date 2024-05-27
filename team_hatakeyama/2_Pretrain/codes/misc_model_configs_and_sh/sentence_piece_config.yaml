@@ -1,0 +1,8 @@
+input: ../../data/text/0318longer_eng.jsonl
+output_dir: ../../models/tokenizers/0318longer_eng
+vocab_size: 65000
+num_threads: 32
+model_prefix: tokenizer
+character_coverage: 0.9995
+model_type: unigram #character_coverage
+train_extremely_large_corpus: True

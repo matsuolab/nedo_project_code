@@ -1,0 +1,39 @@
+#data configs
+
+#tokenize
+input_jsonl: ../../data/text/corpus.jsonl
+output_prefix: ../../data/text/0323cc_wiki
+
+#train
+tokenized_data_path: ../../data/text/0405clean_ja
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: ../../models/tokenizers/0405clean_ja/tokenizer.model
+output_model_dir: ../../models/pretrain/0405clean_ja
+save_interval: 12000
+
+
+#model params
+model_size: 0.125
+num_layers: 12
+hidden_size: 768
+num_attn_heads: 12
+global_batch_size: 128              #大きい方が安定するが､大きすぎると cuda out of memory
+lr: 6.0e-4
+min_lr: 1.0e-6
+init_std: 0.02
+seq_len: 2048
+
+#deepspeed
+zero_stage: 0
+
+#token info
+#train_tokens: 144112147
+train_tokens: 1269698498
+#train samples
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+##ここを適当に大きくしすぎると､必要メモリが増えすぎるので注意｡
+##10000*...とかにすると､RAMが600GB必要､みたいになる. 300bなら､以下が目安
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+
+

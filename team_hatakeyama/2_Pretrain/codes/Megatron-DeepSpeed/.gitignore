@@ -1,0 +1,34 @@
+__pycache__
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# binaries
+*.so
+
+# tmp files
+*.swp
+
+# AML workspace config file
+config.json
+
+.coverage_*
+*~
+slurm*
+logs
+
+# Data folder
+bookcorpus_data/
+
+# dataset
+dataset/index-cache/
+dataset/**/*.bin
+dataset/**/*.idx
+dataset/**/*.json
+dataset/**/*.jsonl
+dataset/**/*.txt
+
+# output
+output/

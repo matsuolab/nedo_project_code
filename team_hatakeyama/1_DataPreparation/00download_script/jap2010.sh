@@ -1,0 +1,2 @@
+conda activate textprocess
+python dump_jap2010.py

@@ -1,0 +1,57 @@
+#data configs
+
+#tokenize
+#input_jsonl: ../../data/text/corpus_scale_200.jsonl
+#output_prefix: ../../data/text/0420test
+
+#train
+tokenized_data_path: /storage5/split/split/split/tokenized_text_document
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: /storage5/split/split/split/tokernizer/tokenizer_scale200.model
+output_model_dir: /storage5/checkpoints/0501llama/
+save_interval: 1500
+save_interval: 700
+#save_interval: 1000
+
+
+model_size: 13
+num_layers: 40
+hidden_size: 5120
+num_attn_heads: 40
+lr: 1.0e-4
+min_lr: 1.0e-6
+init_std: 0.008
+NHOSTS: 3
+
+#llama3
+model_size: 8
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+lr: 3.0e-4
+min_lr: 3.0e-5
+init_std: 0.02
+NHOSTS: 3
+
+mp_size: 1
+pp_size: 3
+sp_size: 1
+
+global_batch_size: 1536
+micro_batch_size: 3
+#token info
+#train_tokens: 144112147
+train_tokens: 195537374076 
+lr_decay_tokens_in_billion: 193
+lr_decay_tokens: 193537374076
+#この値をきちんと決めておかないと、learning rateのスケジュラーがきちんと動かない
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+
+seq_len: 2048
+
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+zero_stage: 1
+num_workers: 128
+
+activation_checkpoint: false

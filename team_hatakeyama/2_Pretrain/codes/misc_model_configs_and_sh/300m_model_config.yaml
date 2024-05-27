@@ -1,0 +1,34 @@
+#data configs
+data_path: ../../data/tokenized_text_document
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: ../../data/tokenizer/tokenizer.model
+output_model_dir: ../../models/gpt
+save_interval: 1000
+
+#model params
+model_size: 0.35
+num_layers: 24
+hidden_size: 1024
+num_attn_heads: 16
+#global_batch_size=256
+global_batch_size: 64              #大きい方が安定するが､大きすぎると cuda out of memory
+lr: 3.0e-4
+min_lr: 1.0e-6
+init_std: 0.018
+
+seq_len: 2048
+
+#deepspeed
+zero_stage: 0
+
+#token info
+train_tokens: 3600000000 # 3.6 b, 1 epochになるように調整
+
+#train samples
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+##ここを適当に大きくしすぎると､必要メモリが増えすぎるので注意｡
+##10000*...とかにすると､RAMが600GB必要､みたいになる. 300bなら､以下が目安
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+
+

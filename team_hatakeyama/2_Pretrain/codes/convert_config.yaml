@@ -1,0 +1,5 @@
+input_model_dir: /storage5/checkpoints/0514llama_epoch2/checkpoint/gpt_8B_tok300B_lr2e-05_min2e-06_w100M_d10B_cosine_gbs1536_mbs1_g24_z1_pp3_seed1234_rebase/global_step480 
+output_tokenizer_and_model_dir: ../../models/hf/0524snapshot
+temp_dir: /storage5/checkpoints/temp
+huggingface_name: 0525snapshot
+test_prompt_text: こんにちは､

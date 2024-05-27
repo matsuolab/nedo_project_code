@@ -1,0 +1,157 @@
+#data configs
+
+#tokenize
+#input_jsonl: ../../data/text/corpus_scale_200.jsonl
+#output_prefix: ../../data/text/0420test
+
+#train
+tokenized_data_path: /storage5/split/split/split/tokenized_text_document
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: /storage5/split/split/split/tokernizer/tokenizer_scale200.model
+output_model_dir: /storage5/chekpoints
+save_interval: 1500
+save_interval: 3000
+#save_interval: 1000
+
+
+#model params
+model_size: 2.7
+num_layers: 32
+hidden_size: 2560
+num_attn_heads: 32
+global_batch_size: 72             #大きい方が安定するが､大きすぎると cuda out of memory
+lr: 1.6e-4
+min_lr: 1.0e-6
+init_std: 0.011
+seq_len: 2048
+
+
+
+#13b
+model_size: 13
+num_layers: 40
+hidden_size: 5120
+num_attn_heads: 40
+global_batch_size: 32
+lr: 1.0e-4
+min_lr: 1.0e-6
+init_std: 0.008
+
+
+#0.1b
+#model params
+model_size: 0.125
+num_layers: 12
+hidden_size: 768
+num_attn_heads: 12
+global_batch_size: 128              #大きい方が安定するが､大きすぎると cuda out of memory
+lr: 6.0e-4
+min_lr: 1.0e-6
+init_std: 0.02
+
+
+#model params #継続的に動かしているやつ
+model_size: 2.7
+num_layers: 32
+hidden_size: 2560
+num_attn_heads: 32
+global_batch_size: 48             #大きい方が安定するが､大きすぎると cuda out of memory
+#global_batch_size: 48             #大きい方が安定するが､大きすぎると cuda out of memory
+lr: 1.6e-4
+min_lr: 1.0e-6
+init_std: 0.011
+seq_len: 2048
+
+
+# GPT-3 6.7B 2 node: ギリギリcuda out of memory
+model_size: 6.7
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+global_batch_size: 64
+lr: 1.2e-4
+min_lr: 1.0e-6
+init_std: 0.009
+
+# GPT-3 6.7B 2 node: ギリギリcuda out of memory
+model_size: 6.7
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+global_batch_size: 64
+lr: 1.2e-4
+min_lr: 1.0e-6
+init_std: 0.009
+NHOSTS: 2
+
+#13b 3 node
+model_size: 13
+num_layers: 40
+hidden_size: 5120
+num_attn_heads: 40
+global_batch_size: 48
+lr: 1.0e-4
+min_lr: 1.0e-6
+init_std: 0.008
+NHOSTS: 3
+
+
+# GPT-3 6.7B 1 node
+model_size: 6.7
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+global_batch_size: 32
+lr: 1.2e-4
+min_lr: 1.0e-6
+init_std: 0.009
+NHOSTS: 1
+activation_checkpoint: false
+
+
+
+# GPT-3 6.7B 3 node
+model_size: 6.7
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+global_batch_size: 240
+lr: 1.2e-4
+min_lr: 1.0e-6
+init_std: 0.009
+NHOSTS: 3
+activation_checkpoint: true
+#deepspeed
+zero_stage: 1
+
+# GPT-3 6.7B 2 node
+model_size: 6.7
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+global_batch_size: 64
+lr: 1.2e-4
+min_lr: 1.0e-6
+init_std: 0.009
+NHOSTS: 2
+activation_checkpoint: false
+#deepspeed
+zero_stage: 1
+
+
+
+global_batch_size: 1024
+#token info
+#train_tokens: 144112147
+train_tokens: 195537374076 
+lr_decay_tokens_in_billion: 193
+lr_decay_tokens: 193537374076
+#この値をきちんと決めておかないと、learning rateのスケジュラーがきちんと動かない
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+num_workers: 16
+mp_size: 1
+pp_size: 2
+sp_size: 1

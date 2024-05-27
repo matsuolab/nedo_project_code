@@ -1,0 +1,50 @@
+#data configs
+
+#tokenize
+input_jsonl: ../../data/text/0315texts.jsonl
+output_prefix: ../../data/text/0315texts
+
+#train
+tokenized_data_path: ../../data/text/0315texts_text_document
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: ../../models/tokenizers/0315texts_65k_vocab/tokenizer.model
+output_model_dir: ../../models/pretrain/gpt
+save_interval: 6000
+
+#model params
+model_size: 0.35
+num_layers: 24
+#hidden_size: 1024
+num_attn_heads: 16
+#lr: 3.0e-4
+init_std: 0.018
+
+model_size: 1.3
+hidden_size: 2048
+lr: 2.0e-4
+init_std: 0.013
+
+
+#global_batch_size=256
+#global_batch_size: 72              #大きい方が安定するが､大きすぎると cuda out of memory
+#global_batch_size: 18              #大きい方が安定するが､大きすぎると cuda out of memory
+global_batch_size: 128              #大きい方が安定するが､大きすぎると cuda out of memory
+min_lr: 1.0e-6
+
+
+seq_len: 2048
+
+#deepspeed
+zero_stage: 1
+
+#token info
+#train_tokens: 144112147
+train_tokens: 6064827520
+#train samples
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+##ここを適当に大きくしすぎると､必要メモリが増えすぎるので注意｡
+##10000*...とかにすると､RAMが600GB必要､みたいになる. 300bなら､以下が目安
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+
+#

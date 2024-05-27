@@ -1,0 +1,48 @@
+#data configs
+
+#tokenize
+#input_jsonl: ../../data/text/corpus_scale_200.jsonl
+#output_prefix: ../../data/text/0420test
+
+#train
+tokenized_data_path: /storage5/split/btm_ja/BTM_J
+megatron_deepspeed_dir: Megatron-DeepSpeed
+input_tokenizer_file: /storage5/split/split/split/tokernizer/tokenizer_scale200.model
+output_model_dir: /storage5/checkpoints/0507llama_cont_shuffle/
+save_interval: 1500
+save_interval: 700
+#save_interval: 1000
+
+
+#llama3
+model_size: 8
+num_layers: 32
+hidden_size: 4096
+num_attn_heads: 32
+lr: 1.0e-4
+min_lr: 2.0e-6
+init_std: 0.02
+NHOSTS: 3
+
+mp_size: 1
+pp_size: 3
+sp_size: 1
+
+global_batch_size: 1536
+micro_batch_size: 3
+#token info
+#train_tokens: 144112147
+train_tokens: 89938453577
+lr_decay_tokens_in_billion: 89
+lr_decay_tokens: 89938453577
+#この値をきちんと決めておかないと、learning rateのスケジュラーがきちんと動かない
+train_samples: 300000000 # 300B相当｡ もっと学習させる場合は大きくすること!!
+
+seq_len: 2048
+
+#train_samples=$(( 300 * 1000 * 1000 * 1000 * 2 / ${seq_len} ))
+
+zero_stage: 1
+num_workers: 128
+
+activation_checkpoint: false

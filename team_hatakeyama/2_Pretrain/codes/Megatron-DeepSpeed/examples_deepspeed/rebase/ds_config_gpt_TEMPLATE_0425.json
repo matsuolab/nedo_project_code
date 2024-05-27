@@ -1,0 +1,31 @@
+{
+    "train_batch_size": GBSIZE,
+    "train_micro_batch_size_per_gpu": MBSIZE,
+    "steps_per_print": LOG_INTERVAL,
+    "zero_optimization": {
+      "stage": ZERO_STAGE
+    },
+    "optimizer": {
+      "type": "Adam",
+      "params": {
+        "betas": [
+          0.9,
+          0.95,
+        ],
+        "eps": 1e-5,
+      }
+    },
+    "gradient_clipping": 1.0,
+    "prescale_gradients": PRESCALE_GRAD,
+    "fp32_allreduce": true,
+    "bf16": {
+      "enabled": true,
+    },
+    "wall_clock_breakdown": false,
+    "wandb": {
+      "enabled": true,
+      "group":"test_group",
+      "project": "pretrain"
+    }
+}
+  
