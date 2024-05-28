@@ -24,11 +24,11 @@
     - ROPEのtheta=10000
   - 2 epoch目
     - [日本語のみのデータセット](../1_DataPreparation/20integrate_texts/real_btm/BTM_ja_dataset_dict.py)を、シャッフルして学習
-    - 数十b token
+    - 65b token
     - lr=2e-5
   - 3 epoch目
     - [日英のデータセット](../1_DataPreparation/20integrate_texts/dataset_dict.py)をシャッフルして学習
-    - 数十b token
+    - 20b token
     - context長を8192に増加
     - ROPEのtheta=500000
     - lr=2e-5
