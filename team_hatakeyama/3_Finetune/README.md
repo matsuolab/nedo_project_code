@@ -22,17 +22,9 @@ pip3 install -r llm-leaderboard/requirements.txt
 
 ~~~
 
+## ファインチューニング用のデータ(一部)
+- [BumpoRikai](https://github.com/hatakeyama-llm-team/exam)
 
-## wandb関連
-- 評価用に､[新規プロジェクトをwandb上で作ります](https://wandb.ai/new-project)
-- [config](./4_eval/llm-leaderboard/configs/config_eval.yaml)を修正します｡
-  - entity,projectは､上記のurlから作成したもの
-  - run_nameは適当
-~~~
-entity: "your_org_name" 
-project: "llmeval" 
-run_name: "test1" 
-~~~
 
 
 ## 実行

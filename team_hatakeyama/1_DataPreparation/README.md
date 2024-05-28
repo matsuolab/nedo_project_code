@@ -145,9 +145,6 @@ python 6_engligh
 - [Cosmopedia](https://huggingface.co/datasets/HuggingFaceTB/cosmopedia)
 - [PMC(CC-BY)](https://huggingface.co/datasets/hatakeyama-llm-team/PMC)
 
-# finetuning data
-- [データセット生成](https://github.com/hatakeyama-llm-team/exam)
-
 
 ## NEXT: [データセットの統合](./20integrate_texts/)に進みます
 
