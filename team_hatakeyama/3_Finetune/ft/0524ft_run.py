@@ -13,6 +13,23 @@ model_name_list=[
 "/storage5/llm/models/hf/step62160_fin",
 ]
 
+
+# argparseのパーサーを作成
+parser = argparse.ArgumentParser(description='引数を取るサンプルスクリプト')
+parser.add_argument('data_dir', type=str, help='1')
+parser.add_argument('job_name', type=str, help='2')
+
+args = parser.parse_args()
+job_name=args.job_name
+
+data_dir=args.data_dir
+data_dir='/storage5/EvalPractice/3_finetune/data/0524with_halcination_little_codes_synth_eng'
+inst_path_list = (glob.glob(f"{data_dir}/*.parquet"))
+
+#evalは抜く
+inst_path_list=[i for i in inst_path_list if i.find("_eval.parquet")==-1]
+print(inst_path_list)
+
 random.shuffle(model_name_list)
 
 
