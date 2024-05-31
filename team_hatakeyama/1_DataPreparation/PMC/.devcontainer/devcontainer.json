@@ -1,0 +1,12 @@
+{
+  "name": "Python Development Container",
+  "context": "..",
+  "dockerFile": "../Dockerfile",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": ["ms-python.python", "ms-python.vscode-pylance"],
+  "forwardPorts": [],
+  "postCreateCommand": "poetry install",
+  "remoteUser": "root"
+}

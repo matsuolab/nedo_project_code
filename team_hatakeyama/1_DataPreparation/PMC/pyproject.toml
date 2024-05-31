@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "dataset-pmc"
+version = "0.1.0"
+description = ""
+authors = ["k3ntar0 <k3ntar01wata@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "src", from = "." }
+]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+nmslib = "^2.1.1"
+scispacy = "^0.5.4"
+spacy = "^3.7.4"
+pandas = "1.5.3"
+protobuf = "^4.25.3"
+pyarrow = "<15.0.0"
+scipy = "<1.11"
+apache-beam = {version = "2.54.0", extras = ["gcp"]}
+tqdm = "^4.66.2"
+huggingface-hub = "^0.22.2"
+python-dotenv = "^1.0.1"
+aiofiles = "^23.2.1"
+aiohttp = "^3.9.5"
+datasets = "^2.19.0"
+lxml = "^5.2.1"
+scikit-learn = "^1.5.0"
+python-levenshtein = "^0.25.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
