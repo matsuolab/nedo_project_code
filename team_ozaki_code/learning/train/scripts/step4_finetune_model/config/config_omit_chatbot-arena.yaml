@@ -1,0 +1,11 @@
+datasets:
+  - name: GENIAC-Team-Ozaki/WikiHowNFQA-ja_cleaned
+    instruction: question
+    input: null
+    output: answer
+    split: train
+  - name: HachiML/Hachi-Alpaca
+    instruction: instruction
+    input: input
+    output: output
+    split: v1.0_cleaned

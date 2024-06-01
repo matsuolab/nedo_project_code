@@ -1,0 +1,31 @@
+datasets:
+  - name: GENIAC-Team-Ozaki/chatbot-arena-ja-karakuri-lm-8x7b-chat-v0.1-awq
+    instruction: prompt
+    input: null
+    output: chosen
+    split: train
+  - name: GENIAC-Team-Ozaki/WikiHowNFQA-ja_cleaned_newans
+    instruction: question
+    input: null
+    output: answer
+    split: train
+  - name: GENIAC-Team-Ozaki/Hachi-Alpaca_newans
+    instruction: instruction
+    input: input
+    output: output
+    split: train
+  - name: GENIAC-Team-Ozaki/oasst1-oasst2-ja_single_deduped
+    instruction: instruction
+    input: null
+    output: output
+    split: train
+  - name: GENIAC-Team-Ozaki/AnswerCarefully
+    instruction: text
+    input: null
+    output: output
+    split: train
+  - name: GENIAC-Team-Ozaki/llm-ja-train
+    instruction: instruction
+    input: input
+    output: answer
+    split: train

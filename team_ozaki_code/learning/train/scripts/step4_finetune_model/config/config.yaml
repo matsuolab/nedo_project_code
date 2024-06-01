@@ -1,0 +1,6 @@
+datasets:
+  - name: GENIAC-Team-Ozaki/tuninig-dataset_sft_80pct_v2
+    instruction: instruction
+    input: input
+    output: output
+    split: train
