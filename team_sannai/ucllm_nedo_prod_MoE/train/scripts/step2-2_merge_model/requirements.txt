@@ -1,2 +1,0 @@
-git+https://github.com/if001/mergoo.git
-pyyaml
