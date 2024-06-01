@@ -1,0 +1,8 @@
+.venv
+.python-version
+corpus
+myenv
+__pycache__
+artifacts
+corpus
+eval_data

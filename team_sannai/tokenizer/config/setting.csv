@@ -1,0 +1,4 @@
+id,category,vocab_size,coverage,model_type,max_sentence_length,eval_data_path
+wiki1,3000l_1,20000,0.995,bpe,4096,./eval_data/wiki/input_wiki_ja.txt
+wiki2,3000l_2,20000,0.995,bpe,4096,./eval_data/wiki/input_wiki_ja.txt
+news,wikinews-ja,20000,0.995,bpe,4096,./eval_data/wiki/input_wiki_ja.txt

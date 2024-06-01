@@ -1,0 +1,2 @@
+"dataset_path","corpus_name","size","dst_dataset_path","extension","method","pickup_file_path","output_extension"
+"/home/nishi/github/tokenizer/dataset_corpus","math,medical",0.1,"/home/nishi/github/tokenizer/dataset_dst","jsonl","split_all_with_count",,"jsonl"
