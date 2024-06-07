@@ -1,0 +1,4 @@
+META:
+  -
+    path: '/storage7/finetune_data/multi_single.jsonl'
+    type: 'text'

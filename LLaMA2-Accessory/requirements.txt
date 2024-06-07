@@ -1,0 +1,18 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.2+cu118
+pandas
+tensorboard
+fairscale
+sentencepiece
+gradio==3.50.2
+fire
+packaging
+transformers
+pyyaml
+pathlib
+Ninja
+bitsandbytes
+httpx[socks]
+einops
+regex
+h5py

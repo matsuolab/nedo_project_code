@@ -1,0 +1,5 @@
+META:
+  -
+    #path: '/storage7/finetune_data/oasst2-chat-68k-ja_converted_train.json'
+    path: '/storage7/finetune_data/multi_turn_ja.json'
+    type: 'text'

@@ -1,0 +1,4 @@
+META:
+  -
+    path: '/storage7/finetune_data/single_turn_ja_shuf_human_otherteam.jsonl'
+    type: 'text'

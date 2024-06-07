@@ -1,0 +1,4 @@
+META:
+  -
+    path: '/storage7/finetune_data/single_multi_human_otherteam_ja.jsonl'
+    type: 'text'
