@@ -56,10 +56,32 @@ for model_name in model_name_list:
             #マルチgpu
             pre_cmd="accelerate launch --config_file ./llm-jp-sft/configs/accelerate_config_zero1.yaml ./llm-jp-sft/train.py"
             #通常
-            #pre_cmd="python ./llm-jp-sft/train.py"
+            cmd = f"""{pre_cmd}  \
+                --num_train_epochs 3 \
+                --per_device_train_batch_size 5 \
+                --per_device_eval_batch_size 3 \
+                --save_strategy "steps" \
+                --save_steps 1000 \
+                --logging_steps 1 \
+                --gradient_accumulation_steps 16 \
+                --learning_rate {lr} \
+                --warmup_ratio 0.1 \
+                --lr_scheduler_type cosine \
+                --bf16 \
+                --data_files {inst_path} \
+                --model_name_or_path {model_name} \
+                --use_fast True \
+                --output_dir {out_path} \
+                --instruction_template "\n\n### 指示:\n" \
+                --response_template "\n\n### 応答:\n" \
+                --use_flash_attention_2 True \
+                --gradient_checkpointing true \
+                --max_seq_length 4096 \
+                --eval_data_files {eval_path} \
 
-            cmd = f"""{pre_cmd}
             """
+
+ 
 
             #--load_in_4bit True \
             os.system(cmd)
