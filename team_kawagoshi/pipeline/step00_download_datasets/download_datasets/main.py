@@ -23,8 +23,7 @@ def main():
     args = parse_args()
     streaming = args.streaming
     split = args.split
-    
-    # こちらにデータセットを追加していく
+
     if args.dataset == "refinedweb":
         loader = refinedweb_en_loader(streaming=streaming, split=split)
         output_dir_path = os.path.join(OUTPUT_PATH, "refinedweb")
