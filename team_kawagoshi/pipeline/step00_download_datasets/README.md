@@ -36,6 +36,7 @@ $ python main.py --dataset=mc4-ja --split=train --streaming=False --index_from=0
 
 git-lfsにて、高速ダウンロードする場合
 ```sh
+$ cd ~/nedo_project_code/team_kawagoshi/pipeline/step00_download_datasets/output 
 $ git lfs install
 $ GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/datasets/izumi-lab/mc4-ja
 $ git lfs fetch
