@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "prompt2model-test"
+version = "0.1.0"
+description = ""
+authors = ["Masataka Ogawa"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11.7,<4.0"
+torch = {version = "^2.3.0+cu121", source = "torch_cu121"}
+llama-cpp-python = {version = "^0.2.69", source = "llama_cpp_python_cu121"}
+accelerate = "^0.30.0"
+bitsandbytes = "^0.43.1"
+packaging = "^24.0"
+ninja = "^1.11.1.1"
+wheel = "^0.43.0"
+setuptools = "^69.5.1"
+transformers = "<4.31.0"
+prompt2model = "^0.1.0"
+openpyxl = "^3.1.2"
+polars = "^0.20.27"
+jaconv = "^0.3.4"
+spacy = {extras = ["cuda12x"], version = "^3.7.4"}
+ja-ginza-bert-large = {url = "https://github.com/megagonlabs/ginza/releases/download/v5.2.0/ja_ginza_bert_large-5.2.0b1-py3-none-any.whl"}
+xlsxwriter = "^3.2.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+flake8 = "^7.0.0"
+ipykernel = "^6.29.4"
+ipywidgets = "^8.1.2"
+seedir = "^0.4.2"
+emoji = "^2.11.1"
+nbformat = "^5.10.4"
+nbclient = "^0.10.0"
+nbconvert = "^7.16.4"
+
+
+[[tool.poetry.source]]
+name = "torch_cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "llama_cpp_python_cu121"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cu121"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
