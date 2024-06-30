@@ -14,7 +14,7 @@ def load_tokenizer_and_model(input_tokenizer_and_model_dir: str):
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_tokenizer_dir", type=str, required=False, default="Xenova/gpt-4")
-    parser.add_argument("--output_tokenizer_dir", type=str, required=False, default="~/ucllm_nedo_prod/pipeline/step3_tokenization/output/download_tokenizer")
+    parser.add_argument("--output_tokenizer_dir", type=str, required=False, default="~/nedo_project_code/team_kawagoshi/pipelinestep3_tokenization/output/download_tokenizer")
     args = parser.parse_args()
     print(f"{args = }")
     return args
