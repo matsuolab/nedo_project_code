@@ -1,4 +1,3 @@
-from jglue_eval import evaluate as jglue_evaluate
 import wandb
 from wandb.sdk.wandb_run import Run
 import os
@@ -46,8 +45,7 @@ if cfg.wandb.log:
     else:
         # If "configs/config.yaml" does not exist, write the contents of run.config as a YAML configuration string
         instance = WandbConfigSingleton.get_instance()
-        assert isinstance(
-            instance.config, DictConfig), "instance.config must be a DictConfig"
+        assert isinstance(instance.config, DictConfig), "instance.config must be a DictConfig"
         with open("configs/config.yaml", 'w') as f:
             f.write(OmegaConf.to_yaml(instance.config))
         artifact_config_path = "configs/config.yaml"
@@ -63,10 +61,6 @@ evaluate()
 
 # 2. mt-bench evaluation
 # mtbench_evaluate()
-# cleanup_gpu()
-
-# 3. JGLUE
-jglue_evaluate()
 # cleanup_gpu()
 
 # Logging results to W&B
