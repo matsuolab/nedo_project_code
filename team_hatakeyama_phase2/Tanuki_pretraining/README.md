@@ -34,21 +34,14 @@ Tanuki_pretraining
         全体に悪影響を及ぼす可能性があります。
         その場合、make_env.sh　の中のコマンドを参考にして、環境を構築してください。
 ```
-aaddadadadamama,aa,,,,,saawwaa,,,<,,,,,,sssaa
 
+nvidia-driverがない場合は、nvidia-driver-535をインストールする。 メモリを50GB程度使うので、64GB以下のマシンはスワップメモリを確保する。
 
 ```
-ubuntu 20 dadaassadada
-git clone https://github.com/matsuolab/nedo_project_code.git
-git checkout team_hatakeyama_phase2 
-cd team_hatakeyama_phase2/Tanuki_pretraining/
+git clone -b team_hatakeyama_phase2 https://github.com/matsuolab/nedo_project_code.git
+cd team_hatakeyama_phase2/team_hatakeyama_phase2/Tanuki_pretraining/
 sudo chmod +x ./make_env.sh 
-
-
-```bash
-$ git clone https://github.com/team-hatakeyama-phase2/Tanuki_pretraining.git
-$ cd Tanuki_pretraining
-$ make_env.sh
+./make_env.sh
 ## ---- import OK ----- が表示される
 ```
 
