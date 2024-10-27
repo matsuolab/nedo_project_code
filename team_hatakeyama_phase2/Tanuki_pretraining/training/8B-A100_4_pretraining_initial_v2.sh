@@ -6,6 +6,7 @@
 #conda activate 
 # source ./miniconda3/etc/profile.d/conda.sh
 # conda activate tanuki_pretraining_py310_TEv1.7_FAv2.5.7
+export PYTHONPATH=/home/ubuntu/nedo_project_code/team_hatakeyama_phase2/Tanuki_pretraining/Megatron-LM:$PYTHONPATH
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 export CUDA_VISIBLE_DEVICES=0,1,2,3
@@ -41,7 +42,7 @@ WEIGHT_DECAY=0.1
 GRAD_CLIP=0.8
 
 # model config
-TOKENIZER_MODEL="./training/tokernizer/tokenizer_scale200.model"
+TOKENIZER_MODEL="./training/tokenizer/tokenizer_scale200.model"
 CHECKPOINT_LOAD_DIR="./training/checkpoints/Llama-3-8b/tp${TENSOR_PARALLEL_SIZE}-pp${PIPELINE_PARALLEL_SIZE}-ct${CONTEXT_PARALLEL_SIZE}-LR${LR}-MINLR${MIN_LR}-WD${WEIGHT_DECAY}-WARMUP${LR_WARMUP_STEPS}"
 CHECKPOINT_SAVE_DIR="./training/checkpoints/Llama-3-8/tp${TENSOR_PARALLEL_SIZE}-pp${PIPELINE_PARALLEL_SIZE}-ct${CONTEXT_PARALLEL_SIZE}-LR${LR}-MINLR${MIN_LR}-WD${WEIGHT_DECAY}-WARMUP${LR_WARMUP_STEPS}"
 

@@ -6,6 +6,7 @@
 #conda activate 
 # source ./miniconda3/etc/profile.d/conda.sh
 # conda activate tanuki_pretraining_py310_TEv1.7_FAv2.5.7
+export PYTHONPATH=/home/ubuntu/nedo_project_code/team_hatakeyama_phase2/Tanuki_pretraining/Megatron-LM:$PYTHONPATH
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 export CUDA_VISIBLE_DEVICES=0,1,2,3

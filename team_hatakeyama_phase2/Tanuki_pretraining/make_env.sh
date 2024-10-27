@@ -108,7 +108,7 @@ echo "########## pip install : Flash Attention ##########"
 cd $DIR && pip install --no-build-isolation flash-attn==$fav
 
 echo "########## conda install for tokenizer ##########"
-conda install scikit-learn=1.5.1 nltk=3.8.1 sentencepiece=0.2.0 pytz=2024.2 pandas=2.2.2 tqdm=4.66.5 transformers=4.42.4 -y
+# conda install scikit-learn=1.5.1 nltk=3.8.1 sentencepiece=0.2.0 pytz=2024.2 pandas=2.2.2 tqdm=4.66.5 transformers=4.42.4 -y
 
 echo "===== import check : transformer_engin & flash_attn ====="
 python -c "from transformer_engine import pytorch" && echo "----- import OK -----" || echo "----- import NG -----"

@@ -1,6 +1,21 @@
 # Tanuki_pretraining
+
+*注意：  Azure、GCPのVMCにおいて、初期から環境構築を行う為に
+        minicondaをインストールします。ネイティブ環境等で、既にminiconda環境がある場合は
+        全体に悪影響を及ぼす可能性があります。
+        その場合、make_env.sh　の中のコマンドを参考にして、環境を構築してください。
+
+
+##　gitクローン
+```bash
+git clone https://github.com/matsuolab/nedo_project_code.git
+git checkout team_hatakeyama_phase2 
+cd team_hatakeyama_phase2/Tanuki_pretraining/
+sudo chmod +x ./make_env.sh 
 ```
-Tanuki_pretraining
+
+
+nedo_project_code/team_hatakeyama_phase2/Tanuki_pretraining
     |
     |-- Megatron-LM
     |       |
@@ -28,24 +43,22 @@ Tanuki_pretraining
 ```
 ## 環境構築
 
-```
-*注意：  Azure、GCPのVMCにおいて、初期から環境構築を行う為に
-        minicondaをインストールします。ネイティブ環境等で、既にminiconda環境がある場合は
-        全体に悪影響を及ぼす可能性があります。
-        その場合、make_env.sh　の中のコマンドを参考にして、環境を構築してください。
-```
-aaddadadadamama,aa,,,,,saawwaa,,,<,,,,,,sssaa
 
 
-```
-ubuntu 20 dadaassadada
-git clone https://github.com/matsuolab/nedo_project_code.git
-git checkout team_hatakeyama_phase2 
-cd team_hatakeyama_phase2/Tanuki_pretraining/
-sudo chmod +x ./make_env.sh 
 
 
+本環境構築シェルスクリプトは、ubuntu 20に対応しています。
+ubuntu 22 , ubuntu 24　などは、gcc-11 g++-11を指定してください。
 ```bash
+sudo apt update
+sudo apt install gcc-11 g++-11
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
+```
+
+
+
+
 $ git clone https://github.com/team-hatakeyama-phase2/Tanuki_pretraining.git
 $ cd Tanuki_pretraining
 $ make_env.sh
