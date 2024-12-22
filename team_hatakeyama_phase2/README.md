@@ -60,5 +60,10 @@
     - [Hajime-Y/Evol-Instruct-jp](https://github.com/Hajime-Y/Evol-Instruct-jp)のプロンプトを参考に作成
   - バッチ推論による応答の作成
 
+## [llm-leaderboard](llm-leaderboard)
+- 評価
+  - Nejumi-leaderboard Neo for Tanuki
+  - JMT-Benchのみ、llm-jp-evalのみ、その両方の評価が可能
+
 # ライセンス
 - ライセンスはMITとなります(一部､他のレポジトリからcloneしたコードが含まれるフォルダが存在します｡そのフォルダ内のライセンスは､元のライセンスに従います)｡
