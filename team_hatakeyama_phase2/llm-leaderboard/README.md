@@ -72,7 +72,6 @@ mtbench:
 ## Evaluation execution
 1. 評価を実行します。
 
-   エラー対策は[こちらのNotionページ](https://www.notion.so/matsuolab-geniac/97d24429af354baa965fc5a5d812601d?pvs=4#c76478bff0e745fbaa260fd13654df8a)をご確認ください。
 ```
 # JMT-Benchのみ動かす場合
 python scripts/run_jmtbench_eval.py
